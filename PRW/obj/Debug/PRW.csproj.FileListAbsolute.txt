@@ -1,0 +1,17 @@
+C:\Users\kbstudentint\Desktop\PRW\bin\Debug\PRW.exe.config
+C:\Users\kbstudentint\Desktop\PRW\obj\Debug\PRW.csprojResolveAssemblyReference.cache
+C:\Users\kbstudentint\Desktop\PRW\obj\Debug\MainWindow.baml
+C:\Users\kbstudentint\Desktop\PRW\obj\Debug\MainWindow.g.cs
+C:\Users\kbstudentint\Desktop\PRW\obj\Debug\App.g.cs
+C:\Users\kbstudentint\Desktop\PRW\obj\Debug\PRW_MarkupCompile.cache
+C:\Users\kbstudentint\Desktop\PRW\obj\Debug\PRW.g.resources
+C:\Users\kbstudentint\Desktop\PRW\obj\Debug\PRW.Properties.Resources.resources
+C:\Users\kbstudentint\Desktop\PRW\obj\Debug\PRW.csproj.GenerateResource.Cache
+C:\Users\kbstudentint\Desktop\PRW\obj\Debug\Dictionary1.baml
+C:\Users\kbstudentint\Desktop\PRW\obj\Debug\App.baml
+C:\Users\kbstudentint\Desktop\PRW\bin\Debug\PRW.exe
+C:\Users\kbstudentint\Desktop\PRW\bin\Debug\PRW.pdb
+C:\Users\kbstudentint\Desktop\PRW\obj\Debug\PRW.exe
+C:\Users\kbstudentint\Desktop\PRW\obj\Debug\PRW.pdb
+C:\Users\kbstudentint\Desktop\PRW\obj\Debug\Pages\AuthPage.baml
+C:\Users\kbstudentint\Desktop\PRW\obj\Debug\Pages\AuthPage.g.cs

@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="APModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="id_Category" />
+    </Key>
+    <Property Name="id_Category" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_Product_Categories" FromRole="Categories" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Laboratories">
+    <Key>
+      <PropertyRef Name="id_Laboratory" />
+    </Key>
+    <Property Name="id_Laboratory" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Tests" Relationship="Self.FK_Tests_Laboratories" FromRole="Laboratories" ToRole="Tests" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="id_Products" />
+    </Key>
+    <Property Name="id_Products" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="id_Category" Type="Int32" />
+    <NavigationProperty Name="Categories" Relationship="Self.FK_Product_Categories" FromRole="Product" ToRole="Categories" />
+    <NavigationProperty Name="Tests" Relationship="Self.FK_Tests_Product" FromRole="Product" ToRole="Tests" />
+  </EntityType>
+  <EntityType Name="Tests">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="id_Products" Type="Int32" />
+    <Property Name="id_Laboratory" Type="Int32" />
+    <Property Name="id_UsedE" Type="Int32" />
+    <Property Name="Begining_time" Type="DateTime" Precision="3" />
+    <Property Name="Ending_time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Laboratories" Relationship="Self.FK_Tests_Laboratories" FromRole="Tests" ToRole="Laboratories" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_Tests_Product" FromRole="Tests" ToRole="Product" />
+    <NavigationProperty Name="Used_Enviroments" Relationship="Self.FK_Tests_Used_Enviroments" FromRole="Tests" ToRole="Used_Enviroments" />
+  </EntityType>
+  <EntityType Name="Used_Enviroments">
+    <Key>
+      <PropertyRef Name="id_UsedE" />
+    </Key>
+    <Property Name="id_UsedE" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Tests" Relationship="Self.FK_Tests_Used_Enviroments" FromRole="Used_Enviroments" ToRole="Tests" />
+  </EntityType>
+  <Association Name="FK_Product_Categories">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="id_Category" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="id_Category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tests_Laboratories">
+    <End Role="Laboratories" Type="Self.Laboratories" Multiplicity="0..1" />
+    <End Role="Tests" Type="Self.Tests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Laboratories">
+        <PropertyRef Name="id_Laboratory" />
+      </Principal>
+      <Dependent Role="Tests">
+        <PropertyRef Name="id_Laboratory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tests_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Tests" Type="Self.Tests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="id_Products" />
+      </Principal>
+      <Dependent Role="Tests">
+        <PropertyRef Name="id_Products" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tests_Used_Enviroments">
+    <End Role="Used_Enviroments" Type="Self.Used_Enviroments" Multiplicity="0..1" />
+    <End Role="Tests" Type="Self.Tests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Used_Enviroments">
+        <PropertyRef Name="id_UsedE" />
+      </Principal>
+      <Dependent Role="Tests">
+        <PropertyRef Name="id_UsedE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categories" EntityType="Self.Categories" />
+    <EntitySet Name="Laboratories" EntityType="Self.Laboratories" />
+    <EntitySet Name="Product" EntityType="Self.Product" />
+    <EntitySet Name="Tests" EntityType="Self.Tests" />
+    <EntitySet Name="Used_Enviroments" EntityType="Self.Used_Enviroments" />
+    <AssociationSet Name="FK_Product_Categories" Association="Self.FK_Product_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tests_Laboratories" Association="Self.FK_Tests_Laboratories">
+      <End Role="Laboratories" EntitySet="Laboratories" />
+      <End Role="Tests" EntitySet="Tests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tests_Product" Association="Self.FK_Tests_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Tests" EntitySet="Tests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tests_Used_Enviroments" Association="Self.FK_Tests_Used_Enviroments">
+      <End Role="Used_Enviroments" EntitySet="Used_Enviroments" />
+      <End Role="Tests" EntitySet="Tests" />
+    </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="APModel.sysdiagrams" />
+    <EntitySet Name="User" EntityType="APModel.User" />
+  </EntityContainer>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id_User" />
+    </Key>
+    <Property Name="id_User" Type="Int32" Nullable="false" />
+    <Property Name="Login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Second_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>
