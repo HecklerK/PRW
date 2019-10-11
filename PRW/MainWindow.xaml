@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
         <Rectangle Grid.Column="1" Fill="#FFF4F4F5" Grid.Row="2" Stroke="Black" Grid.ColumnSpan="2" StrokeThickness="0" Margin="0,0,1,0"/>
         <Button Content="Назад" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="8,10,0,0" VerticalAlignment="Top" Width="101"/>
-        <Frame Content="" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Source="/PRW;component/Pages/AuthPage.xaml" Navigated="MainFrame_OnNavigated"/>
+        <Frame x:Name="MainFrame" Content="" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Source="/PRW;component/Pages/AuthPage.xaml" Navigated="MainFrame_Navigated"/>
 
     </Grid>
 </Window>

@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PRW.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="300"
 	Title="Авторизация" Width="593">
@@ -20,10 +21,10 @@
             <RowDefinition Height="62*"/>
         </Grid.RowDefinitions>
         <Label Content="Логин" Grid.Row="1" Grid.Column="1" Height="29" VerticalAlignment="Top"/>
-        <TextBox Grid.Column="2" Grid.Row="1" TextWrapping="Wrap" Text="" Height="29" VerticalAlignment="Top"/>
+        <TextBox x:Name="Login" Grid.Column="2" Grid.Row="1" TextWrapping="Wrap" Text="" Height="29" VerticalAlignment="Top"/>
         <Label Content="Пароль" Grid.Row="1" Margin="0,36,0,0" Grid.Column="1" Height="29" VerticalAlignment="Top"/>
-        <TextBox Grid.Column="2" Grid.Row="1" TextWrapping="Wrap" Text="" Margin="0,36,0,0" Height="29" VerticalAlignment="Top"/>
-        <Button Content="Вход" Grid.Column="2" Margin="0,84,0,0" Grid.Row="1" Height="29" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="Passsword" Grid.Column="2" Grid.Row="1" Margin="0,36,0,0" Height="29" VerticalAlignment="Top"/>
+        <Button Content="Вход" Grid.Column="2" Margin="0,84,0,0" Grid.Row="1" Height="29" VerticalAlignment="Top" Click="Button_Click"/>
         <Button Content="Регистрация" Grid.Column="2" Margin="0,126,0,0" Grid.Row="1" Height="29" VerticalAlignment="Top" Grid.RowSpan="2"/>
 
     </Grid>

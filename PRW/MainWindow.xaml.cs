@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.Entity.Infrastructure;
 
 namespace PRW
 {
@@ -25,20 +26,10 @@ namespace PRW
             InitializeComponent();
         }
 
-        private void MainFrame_OnNavigated(object sender, NavigationEventArgs e)
+        private void MainFrame_Navigated(object sender, NavigationEventArgs e)
         {
-            if(!(e.Content is Page page)) return;
-            this.Title = "LESSON - " + page.Title;
-
-            if(page is  AuthPage)
-            {
-                ButtonBack.Visibility = Visibility.Hidden;
-            }
+            if (!(e.Content is Page page = new Page())) return;
+            if ()
         }
-
-    //    using (var db  =new Entities())
-    //{
-    //    var users = db.User.AsNoTracking().Where(u => u.Login.StartWith("max")).ToList();
-    //}
     }
 }

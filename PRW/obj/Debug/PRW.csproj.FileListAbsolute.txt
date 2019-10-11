@@ -15,3 +15,6 @@ C:\Users\kbstudentint\Desktop\PRW\obj\Debug\PRW.exe
 C:\Users\kbstudentint\Desktop\PRW\obj\Debug\PRW.pdb
 C:\Users\kbstudentint\Desktop\PRW\obj\Debug\Pages\AuthPage.baml
 C:\Users\kbstudentint\Desktop\PRW\obj\Debug\Pages\AuthPage.g.cs
+C:\Users\DShibalkov\Desktop\PRW\bin\Debug\PRW.exe.config
+C:\Users\DShibalkov\Desktop\PRW\obj\Debug\PRW.exe
+C:\Users\DShibalkov\Desktop\PRW\obj\Debug\PRW.pdb

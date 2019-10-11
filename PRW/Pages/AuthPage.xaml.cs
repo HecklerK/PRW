@@ -24,5 +24,34 @@ namespace PRW.Pages
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(Login.Text) || string.IsNullOrEmpty(Passsword.Password))
+            {
+                MessageBox.Show("Введите логин и пароль");
+                return;
+            }
+
+            using (var db = new APEntities())
+            {
+                var user = db.User
+                    .AsNoTracking()
+                    .FirstOrDefault(u => u.Login == Login.Text && u.Password == Passsword.Password);
+                if (user == null)
+                {
+                    MessageBox.Show("Пользователь не найден");
+                    return;
+                }
+
+                MessageBox.Show("Пользователь найден");
+                switch (user.Role)
+                {
+                    case "Директор":
+                        NavigationService.Navigate(new DirectorMenu());
+                        break;
+                }
+            }
+        }
     }
 }

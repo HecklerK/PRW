@@ -39,6 +39,14 @@ namespace PRW {
     /// </summary>
     public partial class MainWindow : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
+        
+        #line 19 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Frame MainFrame;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -70,9 +78,10 @@ namespace PRW {
             switch (connectionId)
             {
             case 1:
+            this.MainFrame = ((System.Windows.Controls.Frame)(target));
             
             #line 19 "..\..\MainWindow.xaml"
-            ((System.Windows.Controls.Frame)(target)).Navigated += new System.Windows.Navigation.NavigatedEventHandler(this.MainFrame_OnNavigated);
+            this.MainFrame.Navigated += new System.Windows.Navigation.NavigatedEventHandler(this.MainFrame_Navigated);
             
             #line default
             #line hidden

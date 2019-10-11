@@ -10,27 +10,26 @@
 namespace PRW
 {
     using System;
-    //using System.Data.Entity;
-    //using System.Data.Entity.Infrastructure;
+    using System.Data.Entity;
+    using System.Data.Entity.Infrastructure;
     
-    //public partial class Entities : DbContext
-    //{
-    //    public Entities()
-    //        : base("name=Entities")
-    //    {
-    //    }
+    public partial class APEntities : DbContext
+    {
+        public APEntities()
+            : base("name=APEntities")
+        {
+        }
     
-    //    protected override void OnModelCreating(DbModelBuilder modelBuilder)
-    //    {
-    //        throw new UnintentionalCodeFirstException();
-    //    }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            throw new UnintentionalCodeFirstException();
+        }
     
-    //    public virtual DbSet<Categories> Categories { get; set; }
-    //    public virtual DbSet<Laboratories> Laboratories { get; set; }
-    //    public virtual DbSet<Product> Product { get; set; }
-    //    public virtual DbSet<Tests> Tests { get; set; }
-    //    public virtual DbSet<Used_Enviroments> Used_Enviroments { get; set; }
-    //    public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-    //    public virtual DbSet<User> User { get; set; }
-    //}
+        public virtual DbSet<Categories> Categories { get; set; }
+        public virtual DbSet<Laboratories> Laboratories { get; set; }
+        public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<Tests> Tests { get; set; }
+        public virtual DbSet<Used_Enviroments> Used_Enviroments { get; set; }
+        public virtual DbSet<User> User { get; set; }
+    }
 }
